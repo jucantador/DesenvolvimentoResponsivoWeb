@@ -1,96 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Design Responsivo</title>
+    <title>AulaJS</title>
 </head>
-
 <body>
-    <Header>
-        <br>
-        <h1>Design Responsivo</h1>
-        </br>
-        <nav>
-            <button>Abrir/Fechar Menu</button>
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="sobre.html">Sobre nós</a>
-                </li>
-                <li>
-                    <a href="portfolio.html">Portfólio</a>
-                </li>
-                <li>
-                    <a href="contato.html">Contato</a>
-                </li>
-            </ul>
-        </nav>
-    </Header>
-    <main>
-       <header>
-           <h2>Texto Grande Aqui!</h2>   
-           <p>Texto Menor Aqui</p>
-           <a href="#servicos">Role para ver mais</a>           
-       </header>
-       <section>
-           <h2>O que fazemos</h2>
-           <section id="servicos">
-               <h3>Desenvolvimento Web</h3>
-           </section>
-       </section>
-    </main>
-    <footer>
-        <div>
-            <div>
-                <a href="index.html">Design Responsavel</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis sodales magna, sed malesuada eros. Donec
-                    odio sapien, suscipit auctor mollis a, auctor vitae lectus. Morbi est enim, lacinia sit amet libero vel,
-                    egestas vestibulum felis. Etiam ut feugiat nulla, sit amet pellentesque quam. Integer enim lacus, volutpat
-                    eget maximus sed, convallis quis mi. Suspendisse pulvinar id nulla a condimentum. Nam nec ultricies mi.
-                    Donec et elit risus. </p>
-            </div>
-            <div>
-                <h2>Social</h2>
-                <ul>
-                    <li>
-                        <a href="https://twitter.com" target="_blank">Twitter</a>
-                    </li>
-                    <li>
-                        <a href="https://facebook.com" target="_blank">Facebook</a>
-                    </li>
-                    <li>
-                        <a href="https://instragram.com" target="_blank">Instagram</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h2>Links</h2>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="sobre.html">Sobre nós</a>
-                    </li>
-                    <li>
-                        <a href="portfolio.html">Portfólio</a>
-                    </li>
-                    <li>
-                        <a href="contato.html">Contato</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div>
-            2017 - Todos os direitos reservados
-        </div>
-    </footer>
-
+    <script>
+        var matriz = [
+        [8, 22, 13, 7],
+        [5, 13, 10, 9],
+        [9, 1, 6, 2],
+        [45, 88, 22, 3]
+    ];
+    
+    function mostraMatriz() {
+        for (let i = 0; i < matriz.length; i++) {
+            const linha = matriz[i];
+            var valores = "|";
+            for (let j = 0; j < linha.length; j++) {
+                const coluna = linha[j];
+                if (coluna < 10)
+                    valores += "0" + coluna;
+                else
+                    valores += coluna;
+                valores += "|";
+            }
+            console.log(valores);
+        }
+    }
+    
+    function somaDiagonalPrincipal() {
+        var total = 0;
+        for (let i = 0; i < matriz.length; i++) {
+            const linha = matriz[i];
+            for (let j = 0; j < linha.length; j++) {
+                const coluna = linha[j];
+                if (i == j) {
+                    total += coluna;
+                    break;
+                }
+            }
+        }
+        console.log("A soma da diagonal principal é: " + total);
+    }
+    
+    function somaDiagonalSecundaria() {
+        // implementar esse método
+    }
+    </script>
+    
 </body>
-
 </html>
